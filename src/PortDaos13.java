@@ -10,7 +10,7 @@ try{
 Class.forName("com.mysql.jdbc.Driver");  
 Connection con=DriverManager.getConnection(  
 "jdbc:mysql://localhost/test","root","deep");  
-      
+      // Hello this is GitHub Commit Test
 	
 
   String sql="update deep11 set question13=? where uname=? ";

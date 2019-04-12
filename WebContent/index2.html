@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+
+<script type="text/javascript" id="ram" target="f2" >
+var time = 1800;
+
+// Time coutdown
+var m=parseInt(time/60);
+var s=parseInt(time%60);
+var page = "submitq.html";
+function countDown(){
+gett("timecount").innerHTML ="Time left:"+ m+"minute"+s+"second"; 
+if(time == -1){
+window.location = page;
+}
+else 
+{
+time=time-1;
+m=parseInt(time/60);
+s=parseInt(time%60);
+
+}
+}
+function gett(id){
+if(document.getElementById) return document.getElementById(id);
+if(document.all) return document.all.id;
+if(document.layers) return document.layers.id;
+if(window.opera) return window.opera.id;
+}
+function init(){
+if(gett('timecount')){
+	setInterval(countDown, 1000);
+gett("timecount").innerHTML ="time Left:"+m+" minute"+s+" second";
+}
+else{
+setTimeout(init,1000);
+}
+}
+document.onload = init();
+
+</SCRIPT>
+</head>
+<body target="f2">
+
+<h3 align="right" target="f2"> <span id="timecount" ></span> !</h3>
+
+
+</body>
+</html>

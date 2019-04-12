@@ -1,0 +1,51 @@
+<html>
+<head>
+<title> Q18 </title>
+</head>
+<body>
+<h1>Question No 18 .</h1>
+<form name="f4" action="sub18" >
+<table>
+<h3>
+What is the output of this C code?
+
+</h3>
+<code>
+ #include ""stdio.h"<br/>
+    #include "string.h"<br/>
+    int main()<br/>
+    {<br/>
+        char line[3];<br/>
+        FILE *fp;<br/>
+        fp = fopen("newfile.txt", "r");<br/>
+        while (fgets(line, 3, fp))<br/>
+        fputs(line, stdout);<br/>
+        return 0;<br/>
+    }<br/>
+</code>
+
+<tr>
+<th>
+<input type="radio" name="q18" value="a"></th><td><p> Compilation error</p>
+</td>
+</tr>
+<tr>
+<th>
+<input type="radio" name="q18" value="b"></th><td><p>Infinite loop</p>
+</td>
+</tr>
+<tr><th><input type="radio" name="q18" value="c"></th><td><p> Segmentation fault	</p></td></tr>
+<tr>
+<th>
+<input type="radio" name="q18" value="d"></th><td><p>No.of lines present in file newfile </p>
+</td>
+</tr>
+
+
+
+</table>
+<a href="q17.html"><input type="button" value="previous"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="q19.html"><input type="submit" value="next"/></a>
+</form>
+</body>
+</html>

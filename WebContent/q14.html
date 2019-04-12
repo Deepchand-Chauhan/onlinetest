@@ -1,0 +1,52 @@
+<html>
+<head>
+<title> Q14 </title>
+</head>
+<body>
+<h1>Question No 14 .</h1>
+<form name="f4" action="sub14" >
+<table>
+<h3>
+How will you free the memory allocated by the following program?
+
+</h3>
+<code>
+
+#include "stdio.h"<br/>
+#include"stdlib.h"<br/>
+#define MAXROW 3<br/>
+#define MAXCOL 4<br/>
+<br/>
+int main()<br/>
+{<br/>
+    int **p, i, j;<br/>
+    p = (int **) malloc(MAXROW * sizeof(int*));<br/>
+    return 0;<br/>
+}<br/>
+</code>
+
+<tr>
+<th>
+<input type="radio" name="q14" value="a"></th><td><p>memfree(int p); </p>
+</td>
+</tr>
+<tr>
+<th>
+<input type="radio" name="q14" value="b"></th><td><p>	dealloc(p);</p>
+</td>
+</tr>
+<tr><th><input type="radio" name="q14" value="c"></th><td><p>malloc(p, 0);	</p></td></tr>
+<tr>
+<th>
+<input type="radio" name="q14" value="d"></th><td><p> free(p);</p>
+</td>
+</tr>
+
+
+
+</table>
+<a href="q13.html"><input type="button" value="previous"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="q15.html"><input type="submit" value="next"/></a>
+</form>
+</body>
+</html>

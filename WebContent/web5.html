@@ -1,0 +1,382 @@
+<!DOCTYPE HTML><html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Login & Signup</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<style type="text/css">
+body{
+background-image:url("dp2.jpg");
+background-repeate:no-repeate;
+margin-left:100px;
+margin-right:50px;
+}
+.u{
+
+text-decoration:lowercase;
+text-style:italic;
+text-color:green;
+text-shadow:green 2px 1px 1px;
+}
+
+
+.ua{
+font-size:20px;
+text-decoration:lowercase;
+text-style:italic;
+text-color:green;
+text-shadow:cyan 1px 1px 1px;
+}
+.d{
+color:green;
+font-size:20px;
+font-color:red;
+margin: 5px;
+		padding: 5px 15px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size:14px;
+		border-left:3px solid blue; border-right:3px solid blue;
+		border-top:3px solid blue;
+		border-style:outset;
+		border-bottom:3px solid blue;
+		border-top-left-radius: 5px 5px;
+		border-bottom-left-radius: 5px 5px;
+		border-bottom-right-radius:5px 5px;
+		border-top-right-radius:5px 5px;
+	
+}
+.log{
+padding:10px;
+border:5px solid red;
+border-style:outset;
+border-radious:2px;
+float:left;
+margin-top:30px;
+margin-right:40px;
+
+}
+.sin{
+padding:10px;
+border:5px solid green;
+float:right;
+margin-top:30px;
+margn-right:100px;
+border-top:5px solid green;
+border-right:5px solid green;
+border-bottom:5px solid green;
+border-left:5px solid green;
+border-style:outset;
+border-top-left-radious:10px 10px;
+border-bottom-left-radious:5px 5px;
+border-bottom-right-radious:5px 5px;
+border-top-right-radious:5px 5px;
+margin-left:40px;
+}
+.deep{
+
+        background:transparent	;
+		margin: 5px;
+		padding: 5px 15px;
+		background:cyan;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size:14px;
+		border-left:3px solid blue; border-right:3px solid blue;
+		border-top:3px solid blue;
+		border-bottom:3px solid blue;
+		border-style:outset;
+		border-top-left-radius: 5px 5px;
+		border-bottom-left-radius: 5px 5px;
+		border-bottom-right-radius:5px 5px;
+		border-top-right-radius:5px 5px;
+	}
+	.f:hover
+	{
+	color:green;
+	font-size:20px;
+	font-color:green;
+	}
+</style>
+
+
+Current Time:<span id="t"></span>
+</p>
+<script type="text/javascript">
+var today=new Date();
+document.getElementById('t').innerHTML=today;
+function ur(){
+var m;
+var un=document.form1.nm.value;
+if(un==""||un==null)
+{
+m="this field is required";
+
+}
+else {
+m=" ";
+}
+document.getElementById('u').innerText=m;
+}
+function uv(){
+var m;
+var u1=document.form2.uname.value;
+if(u1==""||u1==null)
+{
+m="this field is required";
+
+}
+else {
+m=" ";
+}
+document.getElementById('v').innerText=m;
+}
+function uw(){
+var m;
+var un=document.form2.sname.value;
+if(un==""||un==null)
+{
+m="this field is required";
+
+}
+else {
+m=" ";
+}
+document.getElementById('w').innerText=m;
+}
+
+
+function ps()
+{
+var ms;
+
+if(document.form1.pass.value.length<5)
+{
+ms="poor";
+}
+else 
+{
+ms="good";
+}
+document.getElementById('p').innerText=ms;
+}
+function ps1()
+{
+var ms;
+
+if(document.form2.pw.value.length<5)
+{
+ms="poor";
+}
+else 
+{
+ms="good";
+}
+document.getElementById('p1').innerText=ms;
+}
+function ps2()
+{
+var ms2;
+var v1=document.form2.pw.value;
+var v2=document.form2.cpw.value;
+if(v1!=v2)
+{
+ms2="password must be same";
+}
+else 
+{
+ms2=" ";
+}
+document.getElementById('p2').innerHTML=ms2;
+}
+</script>
+<script type="text/javascript">
+function click()
+{
+alert("successfully login");
+}
+</script>
+<script type="text/javascript">
+function nan()
+{
+var n;
+var msg;
+n=document.form2.pno.value;
+if(isNaN(document.form2.pno.value))
+{
+msg="please enter only no.";
+}
+else 
+{
+msg=" ";
+}
+document.getElementById('d').innerText=msg;
+} 
+</script>
+<script>
+function validateemail()  
+{  
+var msg1;
+var x=document.form2.eml.value;  
+var atposition=x.indexOf("@");  
+var dotposition=x.lastIndexOf(".");  
+if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+ msg1="please enter valid email address" ;
+  
+  }
+else{
+msg1=" ";
+}
+document.getElementById('d1').innerHTML=msg1;  
+} 
+</script>
+</head>
+<body bgcolor=cyan>
+<div class="log">
+<table align="center">
+
+<th>
+<h1 class=u>Login</h1>
+
+</th>
+<th>
+<tr>
+
+<form name="form1" action="logportal" >
+
+<tr><th class=ua>UserName:</th><td><input type="text" name="nm" class="deep" onkeydown="ur()"/><span id="u"></span><br/></td></tr>
+<tr><th class=ua>
+
+Password:</th><td><input type="password" name="ps" onkeyup="ps()" class="deep"/><span id="p"></span><br/></td></tr>
+<tr>
+<th align="center">
+<input type="submit" value="login" class=deep name="smt"  class=f onsubmit="click()"  align="center" class="btn btn-primary dropdown-toggle"/>
+</th>
+</tr>
+</form>
+
+<tr/>
+</th>
+</table>
+</div>
+<div class="sin">
+<table colspan="1" align="center">
+
+<tr >
+
+<form name="form2" action="preg">
+<h1 class=u align=center>Sign Up</h1>
+<tr>
+<th class=ua>Username:</th><td><input type="text" name="uname" class="deep" onkeydown="uv()"/><br/><span id=="v"></span></td>
+</tr>
+<tr><th class=ua>Surname:</th><td><input type="text" name="sname" class="deep" onkeydown="uw()"/><br/><span id="w"></span></td></tr>
+<tr><th class=ua>Password:</th><td><input type="password" name="pw" class="deep" class="ps()" onkeydown="ps1()"/><br/><span id="p1"></span></td></tr>
+<tr><th class=ua>Confirm password:</th><td><input type="password" name="cpw" class="deep" onkeyup="ps2()"/><br/><span id="p2"></span></td></tr>
+<tr>
+<th class=ua>Gender:</th>
+<td><input type="radio" name="gender" value="male">m<font></font>
+<input type="radio" name="gender" value="female" checked>f<font></font>
+<br/></td>
+</tr>
+<tr colspan=3>
+<th class=ua>Date of Birth</th>
+
+<td>
+<select name="year"  class=deep >
+<option value="1980">1980</option>
+<option value="1981">1981</option>
+<option value="1982">1982</option>
+<option value="1983">1983</option>
+<option value="1984">1984</option>
+<option value="1985">1985</option>
+<option value="1986">1986</option>
+<option value="1987">1987</option>
+<option value="1988">1988</option>
+<option value="1989">1989</option>
+<option value="1990">1990</option>
+<option value="1991">1991</option>
+<option value="1992">1992</option>
+<option value="1993">1993</option>
+<option value="1994">1994</option>
+<option value="1995">1995</option>
+<option value="1996">1996</option>
+<option value="1997">1997</option>
+<option value="1998">1998</option>
+<option value="1999">1999</option>
+<option value="2000">2000</option>
+<option value="2001">2001</option>
+<option value="2002">2002</option>
+<option value="2003">2003</option>
+<option value="2004">2004</option>
+<option value="2005">2005</option>
+<option value="2006">2006</option>
+<option value="2007">2007</option>
+<option value="2008">2008</option>
+<option value="2009">2009</option>
+<option value="2010">2010</option>
+</select>
+</td>
+<td>
+<select name="month" class=deep>
+<option value="january">january</option>
+<option value="february">february</option>
+<option value="march">march</option>
+<option value="april">april</option>
+<option value="may">may</option>
+<option value="june">june</option>
+<option value="july">july</option>
+<option value="august">august</option>
+<option value="september">september</option>
+<option value="october">october</option>
+<option value="november">nov</option>
+<option value="december">dec</option>
+</select>
+</td>
+<td>
+<select name="day" class=deep>
+<option value="01">01</option>
+<option value="02">02</option>
+<option value="03">03</option>
+<option value="04">04</option>
+<option value="05">05</option>
+<option value="06">06</option>
+<option value="07">07</option>
+<option value="08">08</option>
+<option value="09">09</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+</select>
+</td>
+</tr>
+<tr><th class=ua>E-mail:</th><td><input type="text" name="eml" class="deep" onkeyup="validateemail()"/><br/><span id="d1"></span></td></tr>
+<tr><th class=ua>Phone number:</th><td><input type="text" name="pno" class="deep" onkeyup="nan()"/><br/><span id="d"></span></td></tr>
+<tr><th><input type="submit" name="smt2" value="signup" class="deep" /></th></tr>
+</form>
+</tr>
+</th>
+</table>
+</div>
+
+</body>
+</html>
